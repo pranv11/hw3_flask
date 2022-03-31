@@ -1,9 +1,9 @@
 from flask import render_template
 from flask import Flask
 
-myapp_obj = Flask(__name__)
+myobj = Flask(__name__)
 
-@myapp_obj.route("/")
+@myobj.route("/")
 
 def home():
     name = 'Lisa'
@@ -20,9 +20,11 @@ def home():
         <body>
             <h1>Welcome {name}!</h1>
             <a href="https://www.google.com/">not google</a>
-            <ul>{print}</ul>
+            <ul>
+                {print}<br>
+            </ul>
                 
         </body>
     </html>
     '''
-myapp_obj.run()
+myobj.run()

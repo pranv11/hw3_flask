@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+
+    <body>
+        <ul>
+            {%if request.method == "POST"%}
+                
+                <li>{{name1}}</li>
+            {%endif%}
+        </ul>
+        <h1>Welcome {{name}}!</h1>
+        <a href="https://www.google.com/">not google</a>
+        <ul>
+            {% for city in city_names %}
+                <li>
+                    {{city}}<br>
+                </li>
+            {% endfor %}
+        </ul>
+
+
+        <form method="post">
+            <label for="fname">City Name</label><br>
+            <input type="char" id="fname" name="fname" maxlength="32"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html> 

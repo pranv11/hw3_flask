@@ -2,13 +2,14 @@ from flask import render_template
 from flask import Flask
 
 myobj = Flask(__name__)
-
+city_names = ["Paris", "London", "Rome", "Tahiti"]
+name = 'Lisa'
 @myobj.route("/")
 
 def home():
-    name = 'Lisa'
+    
     print = ""
-    city_names = ["Paris", "London", "Rome", "Tahiti"]
+   
 
     for city in city_names:
         print += f'<li>{city}</li>'

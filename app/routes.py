@@ -21,4 +21,4 @@ def home():
         return redirect("/")
 
     return render_template('home.html', title='home',  
-    name=name, city_names=city_names, form=cityform)
+    name=name, city_names=city_names, cityform=cityform)

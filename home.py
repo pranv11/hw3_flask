@@ -1,3 +1,4 @@
+#Worked with Pranav Arora and Bhagyesh Rathi
 from flask import render_template
 from flask import Flask
 
@@ -8,11 +9,11 @@ name = 'Lisa'
 
 def home():
     
-    print = ""
+    cities = ""
    
 
     for city in city_names:
-        print += f'<li>{city}</li>'
+        cities += f'<li>{city}</li>'
     return f'''
     <html>
         <head>
@@ -22,7 +23,7 @@ def home():
             <h1>Welcome {name}!</h1>
             <a href="www.google.com">not google</a>
             <ul>
-                {print}<br>
+                {cities}<br>
             </ul>
                 
         </body>

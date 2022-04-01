@@ -1,10 +1,11 @@
+<!-- Worked with Pranav Arora and Bhagyesh Rathi -->
 <!DOCTYPE html>
 <body>
     
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
+    {% with text = get_flashed_messages() %}
+    {% if text %}
     <ul>
-        {% for message in messages %}
+        {% for message in text %}
         <li>{{ message }}</li>
         {% endfor %}
     </ul>
@@ -15,17 +16,17 @@
     <a href="www.google.com">not google</a>
 
     <ul>
-        {%for i in city_names %}
-        <li>{{i}}</li>
+        {%for city in city_names %}
+        <li>{{city}}</li>
         {%endfor%}
     </ul>
     <form action="" method="POST" >
-        {{ form.hidden_tag() }}
+        {{ cityform.hidden_tag() }}
         <p>
-            {{ form.city.label }}<br>
-            {{ form.city(size=32) }}
+            {{ cityform.city.label }}<br>
+            {{ cityform.city(size=32) }}
         </p>
-        <p>{{ form.submit() }}</p>
+        <p>{{ cityform.submit() }}</p>
     </form>
     
 </body>

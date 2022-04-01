@@ -25,12 +25,12 @@
         {% endfor %}
     </ul>
     <form action="" method="POST" novalidate>
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.city.label }}<br>
-        {{ form.city(size=32) }}
-    </p>
-    <p>{{ form.submit() }}</p>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.city.label }}<br>
+            {{ form.city(size=32) }}
+        </p>
+        <p>{{ form.submit() }}</p>
     </form>
 </body>
 </html> 

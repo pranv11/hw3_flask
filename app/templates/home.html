@@ -3,15 +3,14 @@
     
     {% with messages = get_flashed_messages() %}
     {% if messages %}
-    <ul>    
+    <ul>
         {% for message in messages %}
         <li>{{ message }}</li>
         {% endfor %}
-    </ul>    
+    </ul>
     {% endif %}
     {% endwith %}
-    
-    
+
     <h1>Welcome {{name}}!</h1>
     <a href="www.google.com">not google</a>
 
@@ -20,10 +19,14 @@
         <li>{{i}}</li>
         {%endfor%}
     </ul>
-    <form action="" method="POST" novalidate>
-        {{form.hidden_tag()}}
-        <p>{{ form.city.label }}{{form.city(size=32)}}</p>
+    <form action="" method="POST" >
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.city.label }}<br>
+            {{ form.city(size=32) }}
+        </p>
         <p>{{ form.submit() }}</p>
     </form>
+    
 </body>
 </html>

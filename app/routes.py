@@ -7,7 +7,7 @@ from wtforms.validators import DataRequired
 name = 'Lisa'    
 city_names = ["Paris", "London", "Rome", "Tahiti"]
 class LoginForm(FlaskForm):
-    city = StringField('city', validators=[DataRequired()])
+    city = StringField('City Name', validators=[DataRequired()])
     submit = SubmitField('submit')
 
 
@@ -20,6 +20,5 @@ def home():
         return redirect('/')
 
 
-    return render_template('home.html', title='home', 
-    len = len(city_names), name = name, city_names=city_names, 
-    form = form)
+    return render_template('home.html', title='home',
+    name = name, city_names=city_names,form = form)

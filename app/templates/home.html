@@ -17,17 +17,12 @@
 
     <ul>
         {%for i in city_names %}
-        <li>
-            {{i}}<br>
-        </li>
+        <li>{{i}}</li>
         {%endfor%}
     </ul>
     <form action="" method="POST" novalidate>
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.city.label }}<br>
-            {{ form.city(size=32) }}
-        </p>
+        {{form.hidden_tag()}}
+        <p>{{ form.city.label }}{{form.city(size=32)}}</p>
         <p>{{ form.submit() }}</p>
     </form>
 </body>

@@ -1,28 +1,30 @@
-<!DOCTYPE html>
-<body>
-    <ul>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
-    </ul>
-    
-    <h1>Welcome {{name}}!</h1>
-    <a href="www.google.com">not google</a>
+<html>
+    <head>
+        <title>Home</title>
+    </head>
 
-    <ul>
-        {%for i in city_names %}
-        <li>
-            {{i}}<br>
-        </li>
-        {%endfor%}
-    </ul>
-    <form action="" method="POST" novalidate>
+    <body>
+        {%with messages = get_flashed_messages()%}   
+        {%if messages%}
+        <ul>
+            
+            {%for message in messages%}
+                <li>{{message}}</li>
+            {%endfor%}
+        </ul>
+        {%endif%}
+        {%endwith%}
+`
+        <h1>Welcome {{name}}!</h1>
+        <a href="www.google.com">not google</a>
+        
+        {% for city in city_names %}
+            <li>
+                {{city}}
+            </li>
+        {% endfor %}
+        
+        <form action="" method="POST" novalidate>
         {{ form.hidden_tag() }}
         <p>
             {{ form.city.label }}<br>
@@ -30,10 +32,12 @@
         </p>
         <p>{{ form.submit() }}</p>
     </form>
-    <!-- <form action="" method="POST"><br>
-        <label for="cname">City Name</label><br><br>
-        <input type="text" id="cname" name="cname" maxlength="32"><br><br>
-        <input type="submit" id ="" value="submit">
-    </form> -->
-</body>
-</html>
+
+<!-- 
+        <form action="" method="post"><br>
+            <label for="fname">City Name</label><br><br>
+            <input type="char" id="fname" name="fname" maxlength="32"><br><br>
+            <input type="submit" value="Submit">
+        </form> -->
+    </body>
+</html> 

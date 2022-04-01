@@ -21,4 +21,4 @@ def home():
 
 
     return render_template('home.html', title='home',
-     name = name, city_names=city_names,  form = form)
+    name = name, city_names=city_names,  form = form)

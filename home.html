@@ -14,16 +14,16 @@
         </ul>
         {%endif%}
         {%endwith%}
-`
+
         <h1>Welcome {{name}}!</h1>
         <a href="www.google.com">not google</a>
-        
-        {% for city in city_names %}
-            <li>
-                {{city}}
-            </li>
-        {% endfor %}
-        
+        <ul>
+            {% for city in city_names %}
+                <li>
+                    {{city}}<br>
+                </li>
+            {% endfor %}
+        </ul>
         <form action="" method="POST" novalidate>
         {{ form.hidden_tag() }}
         <p>

@@ -1,28 +1,26 @@
-<html>
-<head>
-    <title>Home</title>
-</head>
-
+<!DOCTYPE html>
 <body>
-    {%with messages = get_flashed_messages()%}   
-    {%if messages%}
     <ul>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
         
-        {%for message in messages%}
-            <li>{{message}}</li>
-        {%endfor%}
-    </ul>
-    {%endif%}
-    {%endwith%}
-`
-    <h1>Welcome {{name}}!</h1>
-    <a href="www.google.com">not google</a>S
-    <ul>
-        {% for city in city_names %}
-            <li>
-                {{city}}
-            </li>
+        {% for message in messages %}
+        <li>{{ message }}</li>
         {% endfor %}
+        
+        {% endif %}
+        {% endwith %}
+    </ul>
+    
+    <h1>Welcome {{name}}!</h1>
+    <a href="www.google.com">not google</a>
+
+    <ul>
+        {%for i in city_names %}
+        <li>
+            {{i}}<br>
+        </li>
+        {%endfor%}
     </ul>
     <form action="" method="POST" novalidate>
         {{ form.hidden_tag() }}
@@ -33,4 +31,4 @@
         <p>{{ form.submit() }}</p>
     </form>
 </body>
-</html> 
+</html>
